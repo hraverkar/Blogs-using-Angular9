@@ -1,0 +1,5 @@
+<button mat-raised-button color="primary" [matMenuTriggerFor]="menu">Menu</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item [routerLink]="['/about']" >About Us</button>
+  <button mat-menu-item [routerLink]="['/contact']" >Contact Us</button>
+</mat-menu>
