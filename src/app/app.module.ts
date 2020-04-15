@@ -20,6 +20,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { SliderComponent } from './slider/slider.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
@@ -44,7 +48,10 @@ import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
     MatMenuModule,
     MatButtonModule,
     HttpClientModule,
-    NgxUsefulSwiperModule
+    NgxUsefulSwiperModule,
+    MatStepperModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent],
