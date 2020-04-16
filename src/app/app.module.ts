@@ -23,6 +23,21 @@ import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { OverlayModule} from '@angular/cdk/overlay';
+import { MatCheckboxModule} from '@angular/material/checkbox';
+import { MatGridListModule } from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { environment } from 'src/environments/environment';
+import {
+  MatSnackBarModule,
+  MAT_SNACK_BAR_DEFAULT_OPTIONS,
+  MAT_SNACK_BAR_DATA
+} from "@angular/material/snack-bar";
+import { BlogComponent } from './blog/blog.component';
 
 
 @NgModule({
@@ -35,6 +50,7 @@ import { MatInputModule } from '@angular/material/input';
     ContactComponent,
     AboutComponent,
     SliderComponent,
+    BlogComponent,
 
   ],
   imports: [
@@ -51,9 +67,26 @@ import { MatInputModule } from '@angular/material/input';
     NgxUsefulSwiperModule,
     MatStepperModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    OverlayModule,
+    MatCheckboxModule,
+    MatGridListModule,
+    MatCardModule,
+    AngularFireModule.initializeApp(environment),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    MatSnackBarModule
   ],
-  providers: [],
+  providers: [
+    { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS,
+      useValue: { duration: 5000 }
+    },
+    {
+      provide: MAT_SNACK_BAR_DATA,
+      useValue: {}
+    }
+  ],
   bootstrap: [AppComponent],
   entryComponents:[]
 })
