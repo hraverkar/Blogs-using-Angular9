@@ -1,9 +1,11 @@
 .example-footer {
-  position: fixed;
+  position: relative;
   bottom: 0;
   left: 0;
   right: 0;
+  height: 90px;
 }
+
 
 .example-icon {
   padding: 0 14px;
