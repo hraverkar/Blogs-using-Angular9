@@ -3,37 +3,47 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import {
   HttpClient,
   HttpErrorResponse,
-  HttpParams
-} from "@angular/common/http";
-import { throwError } from "rxjs";
-import { catchError, retry, tap } from "rxjs/operators";
+  HttpParams,
+} from '@angular/common/http';
+import { throwError } from 'rxjs';
+import { catchError, retry, tap } from 'rxjs/operators';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { Observable } from 'rxjs';
+import * as firebase from 'firebase/app';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService implements OnInit {
-  public blogURL = '../../assets/data/blogData.json';
 
-  constructor(private firestoreService: AngularFirestore, private httpClient:HttpClient) {}
+  public blogURL = '../../assets/data/blogData.json';
+  public user: Observable<firebase.User>;
+
+  constructor(
+    private firestoreService: AngularFirestore,
+    private httpClient: HttpClient,
+    private angularFireAuth: AngularFireAuth
+  ) {
+    this.user = angularFireAuth.authState;
+  }
 
   ngOnInit() {}
 
-  getBlogData(){
+  getBlogData() {
     return this.httpClient
-    .get<any>(this.blogURL, {
-      params: new HttpParams({ }),
-      observe: "response"
-    })
-    .pipe(
-      retry(3),
-      catchError(this.handleError),
-      tap(res => {
+      .get<any>(this.blogURL, {
+        params: new HttpParams({}),
+        observe: 'response',
       })
-    );
+      .pipe(
+        retry(3),
+        catchError(this.handleError),
+        tap((res) => {})
+      );
   }
 
   handleError(error: HttpErrorResponse) {
-    let errorMessage = "Unknow error!;";
+    let errorMessage = 'Unknow error!;';
     if (error.error instanceof ErrorEvent) {
       errorMessage = `Error :${error.error.message}`;
     } else {
@@ -43,7 +53,6 @@ export class DataService implements OnInit {
     return throwError(errorMessage);
   }
 
-
   addUserInfo(
     id: string,
     name: string,
@@ -52,7 +61,11 @@ export class DataService implements OnInit {
     address: string
   ) {
     return this.firestoreService
-      .doc('users/' + id)
+      .doc('contactUsers/' + id)
       .set({ name, contact, email, address });
+  }
+
+  login(email, password) {
+    return this.angularFireAuth.signInWithEmailAndPassword(email, password);
   }
 }
