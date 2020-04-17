@@ -23,10 +23,10 @@ import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { OverlayModule} from '@angular/cdk/overlay';
-import { MatCheckboxModule} from '@angular/material/checkbox';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatGridListModule } from '@angular/material/grid-list';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -35,11 +35,12 @@ import { environment } from 'src/environments/environment';
 import {
   MatSnackBarModule,
   MAT_SNACK_BAR_DEFAULT_OPTIONS,
-  MAT_SNACK_BAR_DATA
-} from "@angular/material/snack-bar";
+  MAT_SNACK_BAR_DATA,
+} from '@angular/material/snack-bar';
 import { BlogComponent } from './blog/blog.component';
-import {MatDividerModule} from '@angular/material/divider';
-
+import { MatDividerModule } from '@angular/material/divider';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatChipsModule } from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,6 @@ import {MatDividerModule} from '@angular/material/divider';
     AboutComponent,
     SliderComponent,
     BlogComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -78,18 +78,19 @@ import {MatDividerModule} from '@angular/material/divider';
     AngularFireAuthModule,
     AngularFireStorageModule,
     MatSnackBarModule,
-    MatDividerModule
+    MatDividerModule,
+    FlexLayoutModule,
+    MatChipsModule
+
   ],
   providers: [
-    { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS,
-      useValue: { duration: 5000 }
-    },
+    { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 5000 } },
     {
       provide: MAT_SNACK_BAR_DATA,
-      useValue: {}
+      useValue: {},
     }
   ],
   bootstrap: [AppComponent],
-  entryComponents:[]
+  entryComponents: [],
 })
 export class AppModule {}
