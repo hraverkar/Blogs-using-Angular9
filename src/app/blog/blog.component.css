@@ -6,3 +6,7 @@
   background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
   background-size: cover;
 }
+.container{
+  margin: 15px;
+  border:2px solid rgb(63, 4, 131);
+ }
