@@ -1,0 +1,14 @@
+<div>
+  <h2 class="text-center">Add Blog</h2>
+  <form #f="ngForm" (ngSubmit)="addNewBlog(f)">
+      <input type="text" ngModel name="articleCategory" class="form-control" placeholder="Article Category" required>
+      <input type="text" ngModel name="title" class="form-control" placeholder="Article Title" required>
+      <input type="text" ngModel name="author_name" class="form-control" placeholder="Author Name" required>
+      <input type="text" ngModel name="date" class="form-control" placeholder="Article Date" required>
+      <input type="file" ngModel name="image" #image required><br><br>
+      <textarea  type="text" ngModel name="description" class="form-control" placeholder="Article description" required></textarea>
+      <input type="text" ngModel name="tags" class="form-control" placeholder="Tags" required>
+      <!-- <input type="file" ngModel name="avatarImage" #image required><br><br> -->
+      <button class="btn btn-primary" [disabled]="f.invalid">Upload Blog</button>
+  </form>
+</div>
