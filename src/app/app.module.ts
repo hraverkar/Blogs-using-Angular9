@@ -38,6 +38,7 @@ import {
   MAT_SNACK_BAR_DATA
 } from "@angular/material/snack-bar";
 import { BlogComponent } from './blog/blog.component';
+import {MatDividerModule} from '@angular/material/divider';
 
 
 @NgModule({
@@ -76,7 +77,8 @@ import { BlogComponent } from './blog/blog.component';
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDividerModule
   ],
   providers: [
     { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS,
