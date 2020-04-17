@@ -58,7 +58,7 @@ export class ContactComponent implements OnInit {
       .addUserInfo(id, this.name, this.contact, this.email, this.address)
       .then((result) => {
         this._snackBar.open(
-          'User Added into database',
+          'Your information saved. We will revertback to you',
           null,
           this.dataSnackBar.duration
         );
