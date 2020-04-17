@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, Injector } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -41,6 +42,8 @@ import { BlogComponent } from './blog/blog.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatChipsModule } from '@angular/material/chips';
+import { LoginComponent } from './login/login.component';
+import { UploadComponent } from './upload/upload.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +56,8 @@ import { MatChipsModule } from '@angular/material/chips';
     AboutComponent,
     SliderComponent,
     BlogComponent,
+    LoginComponent,
+    UploadComponent,
   ],
   imports: [
     BrowserModule,
@@ -80,7 +85,8 @@ import { MatChipsModule } from '@angular/material/chips';
     MatSnackBarModule,
     MatDividerModule,
     FlexLayoutModule,
-    MatChipsModule
+    MatChipsModule,
+    FormsModule
 
   ],
   providers: [
