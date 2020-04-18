@@ -13,6 +13,11 @@ export class ArticlesService {
     private _snackBar: MatSnackBar,
     @Inject(MAT_SNACK_BAR_DATA) public dataSnackBar: any
   ) {}
+
+  getAllBlogs() {
+    return this.firestore.collection('blogs').snapshotChanges()
+  }
+
   addBlogDetails(
     category: string,
     title: string,
