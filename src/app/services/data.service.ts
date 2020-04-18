@@ -68,4 +68,9 @@ export class DataService implements OnInit {
   login(email, password) {
     return this.angularFireAuth.signInWithEmailAndPassword(email, password);
   }
+
+  logout(){
+    return this.angularFireAuth.signOut();
+  }
+
 }
