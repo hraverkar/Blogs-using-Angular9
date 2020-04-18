@@ -1,12 +1,33 @@
-<h2 class="text-center">Sign In</h2>
-<form #f="ngForm" (ngSubmit)="onLogin(f)">
-    <input ngModel #email="ngModel" name="email" type="email" class="form-control" placeholder="Email" required email>
-    <div class="alert alert-danger" *ngIf="email.touched && email.errors?.required">Email is required!</div>
-    <div class="alert alert-danger" *ngIf="email.touched && email.errors?.email">Your input doesn't match email format!</div>
+<mat-card>
+  <mat-card-title>Login</mat-card-title>
+  <mat-card-content>
+    <form #f="ngForm" (ngSubmit)="onLogin(f)">
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>User Email</mat-label>
+          <input matInput ngModel #email="ngModel" name="email" type="email" class="form-control" placeholder="Email"
+            required email>
+          <div class="alert alert-danger" *ngIf="email.touched && email.errors?.required">Email is required!</div>
+          <div class="alert alert-danger" *ngIf="email.touched && email.errors?.email">Your input doesn't match email
+            format!</div>
+        </mat-form-field>
+      </p>
 
-    <input ngModel #pass="ngModel" name="password" type="password" class="form-control" placeholder="Password" required minlength="4">
-    <div class="alert alert-danger" *ngIf="pass.touched && pass.errors?.required">Password is required!</div>
-    <div class="alert alert-danger" *ngIf="pass.touched && pass.errors?.minlength">Please, enter atleast 4 character!</div>
-    <button class="btn btn-primary" placement="top" ngbTooltip="login" [disabled]="email.invalid || pass.invalid">Login</button>
-</form>
-<div class="alert alert-danger" *ngIf="errorMsg != null">{{ errorMsg }}</div>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput ngModel #pass="ngModel" name="password" type="password" class="form-control"
+            placeholder="Password" required minlength="4">
+          <div class="alert alert-danger" *ngIf="pass.touched && pass.errors?.required">Password is required!</div>
+          <div class="alert alert-danger" *ngIf="pass.touched && pass.errors?.minlength">Please, enter atleast 4
+            character!</div>
+        </mat-form-field>
+      </p>
+
+      <div class="button">
+        <button mat-raised-button color="primary" type="submit" mat-button>Login</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
+<div class="alert alert-danger" *ngIf="errorMsg != null"></div>
