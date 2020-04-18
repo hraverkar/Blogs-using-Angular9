@@ -1,14 +1,61 @@
 <div>
-  <h2 class="text-center">Add Blog</h2>
-  <form #f="ngForm" (ngSubmit)="addNewBlog(f)">
-      <input type="text" ngModel name="articleCategory" class="form-control" placeholder="Article Category" required>
-      <input type="text" ngModel name="title" class="form-control" placeholder="Article Title" required>
-      <input type="text" ngModel name="author_name" class="form-control" placeholder="Author Name" required>
-      <input type="text" ngModel name="date" class="form-control" placeholder="Article Date" required>
-      <input type="file" ngModel name="image" #image required><br><br>
-      <textarea  type="text" ngModel name="description" class="form-control" placeholder="Article description" required></textarea>
-      <input type="text" ngModel name="tags" class="form-control" placeholder="Tags" required>
-      <!-- <input type="file" ngModel name="avatarImage" #image required><br><br> -->
-      <button class="btn btn-primary" [disabled]="f.invalid">Upload Blog</button>
-  </form>
+  <mat-card>
+    <mat-card-title>Add Blog</mat-card-title>
+    <form #f="ngForm"WW (ngSubmit)="addNewBlog(f)">
+
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Article Category</mat-label>
+          <input matInput placeholder="Article Category" ngModel name="articleCategory">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Article Title</mat-label>
+          <input matInput placeholder="Article Title" ngModel name="title">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Article Author Name</mat-label>
+          <input matInput placeholder="Article Author Name" ngModel name="author_name">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Publish Date</mat-label>
+          <input matInput placeholder="Article Publish Date" ngModel name="date">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Article Description</mat-label>
+          <textarea matInput placeholder="Article Description" ngModel name="description"></textarea>
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Article Tags</mat-label>
+          <input matInput placeholder="Article Tags" ngModel name="tags">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+      </p>
+      <p>
+        <input type="file" ngModel name="image" #image required><br><br>
+      </p>
+      <div class="button">
+        <button mat-raised-button color="primary" color="primary">Upload Blog</button>
+      </div>
+    </form>
+  </mat-card>
 </div>
