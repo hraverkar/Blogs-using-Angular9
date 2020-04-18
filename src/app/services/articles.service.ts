@@ -15,7 +15,7 @@ export class ArticlesService {
   ) {}
 
   getAllBlogs() {
-    return this.firestore.collection('blogs').snapshotChanges()
+    return this.firestore.collection('blogs').snapshotChanges();
   }
 
   addBlogDetails(
