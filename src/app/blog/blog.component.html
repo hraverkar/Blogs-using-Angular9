@@ -4,13 +4,10 @@
   <mat-card-header>
     <div mat-card-avatar [ngStyle]="{'background-image': 'url(../../assets/image/avatar.jpg)'}" class="example-header-image"></div>
     <mat-card-title class="title">{{article.title}}</mat-card-title>
-    <mat-card-subtitle>Posted at {{article.date}} by {{article.author_name}} || Category {{article.articleCategory}}
-        <mat-chip-list *ngFor="let tag of article.tags">
-          <mat-chip color="primary" selected>{{tag}}</mat-chip>
-        </mat-chip-list>
+    <mat-card-subtitle>Posted at {{article.date}} by {{article.author_name}} ||| Category {{article.categoty}}
     </mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image class="img-article" src={{article.urlToImage}} alt="">
+  <img mat-card-image class="imageSize" src={{article.imgUrl}} alt="">
   <mat-card-content>
     <p>
       {{article.description}}
