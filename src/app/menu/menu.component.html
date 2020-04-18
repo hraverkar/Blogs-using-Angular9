@@ -1,7 +1,22 @@
 <button mat-raised-button color="primary" [matMenuTriggerFor]="menu">Menu</button>
 <mat-menu #menu="matMenu">
-  <button mat-menu-item [routerLink]="['/blog']">Blog</button>
-  <button mat-menu-item [routerLink]="['/about']">About Us</button>
-  <button mat-menu-item [routerLink]="['/contact']">Contact Us</button>
-  <button mat-menu-item [routerLink]="['/login']">Login</button>
+  <div *ngIf="!isUserLogin">
+    <button mat-menu-item [routerLink]="['/blog']">Blog</button>
+  </div>
+
+  <div *ngIf="!isUserLogin">
+    <button mat-menu-item [routerLink]="['/about']">About Us</button>
+  </div>
+
+  <div *ngIf="!isUserLogin">
+    <button mat-menu-item [routerLink]="['/contact']">Contact Us</button>
+  </div>
+
+  <div *ngIf="!isUserLogin">
+    <button mat-menu-item [routerLink]="['/login']">Login</button>
+  </div>
+
+  <div *ngIf="isUserLogin">
+    <button mat-menu-item color="warn" (click)="logout()">Logout</button>
+  </div>
 </mat-menu>
