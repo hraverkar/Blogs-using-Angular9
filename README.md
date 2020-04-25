@@ -1,5 +1,5 @@
 # Harsahal Blog
-
+Blog project using angular 9 and firebase.
 
 ## Screenshot
 ![Screenshot](https://github.com/hraverkar/HarshalBlogs/blob/master/screenshot/ezgif.com-optimize.gif)
