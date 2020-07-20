@@ -1,6 +1,6 @@
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/heroku/node-js-getting-started)
 # Harsahal Blog
-Blog project using angular 9 and firebase.
+Blog project using angular 9 and google firebase.
 
 ## Screenshot
 ![Screenshot](https://github.com/hraverkar/HarshalBlogs/blob/master/screenshot/ezgif.com-optimize.gif)
